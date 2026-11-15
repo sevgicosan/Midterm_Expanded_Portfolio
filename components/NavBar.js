@@ -21,7 +21,7 @@ function isActive(pathname, href) {
   if (href === "/") {
     return pathname === "/";
   }
-  return pathname.startsWith(href);
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function NavBar() {
