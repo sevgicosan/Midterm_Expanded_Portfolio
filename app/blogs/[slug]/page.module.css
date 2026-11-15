@@ -1,0 +1,43 @@
+.date {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-walnut);
+  margin-bottom: 0.5rem;
+}
+
+.article {
+  max-width: 80ch;
+}
+
+.paragraph {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.cover {
+  float: left;
+  width: min(280px, 45%);
+  margin: 0.25rem 1.5rem 1rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.article::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 560px) {
+  .cover {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+}

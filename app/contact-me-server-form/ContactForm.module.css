@@ -1,0 +1,69 @@
+.form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--color-walnut);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 1px;
+  border-color: var(--color-olive);
+}
+
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.fieldError {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+}
+
+.formError {
+  color: var(--color-danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.successPanel h2 {
+  color: var(--color-olive);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Success banner (server-rendered via ?sent=1) ---------- */
+
+.form button {
+  align-self: flex-start;
+  border: none;
+}
+
+.form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}

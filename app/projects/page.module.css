@@ -1,0 +1,5 @@
+.rowNumber {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--color-olive);
+}

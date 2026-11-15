@@ -1,0 +1,14 @@
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.overviewParagraph + .overviewParagraph {
+  margin-top: 1rem;
+}
+
+.githubButton {
+  margin-top: 1.25rem;
+}

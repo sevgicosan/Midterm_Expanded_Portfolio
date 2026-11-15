@@ -1,0 +1,25 @@
+[
+  {
+    "id": "13b113fe-22ec-465b-8920-b36bd8fd3fa9",
+    "slug": "first-blog-post",
+    "title": "First Blog Post",
+    "content": "(Your original text was accidentally overwritten during a code test — please press Edit and restore your words.)",
+    "publishedAt": "2026-11-13T23:46:09.654Z"
+  },
+  {
+    "id": "bb22b4f9-bbf7-4ca9-8e20-8c7b475d90a7",
+    "slug": "autumn-leaves",
+    "title": "Autumn Leaves",
+    "content": "Today I woke up to a rainy morning! It was beautiful and it reminded me my hometown Ankara! The falling leaves were in the streets. I played Autumn Leaves from Eric Clapton.",
+    "publishedAt": "2026-11-13T23:50:59.123Z",
+    "image": "/uploads/5d937564-c040-45df-8582-b0be8ccb0809.png"
+  },
+  {
+    "id": "697cfda0-7edd-40f7-9d6b-3f1bfc76fcba",
+    "slug": "last-friday-night",
+    "title": "Last Friday Night!",
+    "content": "Yesterday, I hosted a part at my place to celebrate for one of my friend's big milestone. She finished up her Post-Doc at Stanford University! \r\nI made sangria, mini burgers and a lot of snacks. We did karaoke throughout the night. \r\nIt was fun!",
+    "publishedAt": "2026-11-15T00:23:27.761Z",
+    "image": "/uploads/11a5fa9a-5c81-4f66-a8da-afe3befc03a1.jpg"
+  }
+]

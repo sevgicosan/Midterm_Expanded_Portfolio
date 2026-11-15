@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1150" viewBox="0 0 1000 1150" font-family="Calibri, Arial, sans-serif" style="display:block;margin:0 auto;background:#fff">
+<text x="500" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#222">Contact form — the journey of one message</text><defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#222"/></marker>
+<marker id="ahr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#A6432C"/></marker>
+</defs>
+
+<line x1="520" y1="60" x2="520" y2="1120" stroke="#bbb" stroke-dasharray="6 6" stroke-width="2"/>
+<text x="230" y="48" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B6CB0">BROWSER — visitor's side</text>
+<text x="770" y="48" text-anchor="middle" font-size="15" font-weight="bold" fill="#C05621">SERVER — your side</text>
+
+<g font-size="16">
+<!-- boxes -->
+<rect x="80" y="90" width="300" height="90" rx="10" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="2.5"/>
+<text x="230" y="125" text-anchor="middle" font-weight="bold">1 · Contact form</text>
+<text x="230" y="148" text-anchor="middle" font-size="14">visitor types name, email, message</text>
+<text x="230" y="167" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">ContactForm.js — collects the information</text>
+
+<rect x="620" y="90" width="320" height="90" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="780" y="125" text-anchor="middle" font-weight="bold">2 · saveContactForm()</text>
+<text x="780" y="148" text-anchor="middle" font-size="14">Server Action — code that runs ONLY here</text>
+<text x="780" y="167" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">actions.js — receives the submission on the server</text>
+
+<rect x="620" y="260" width="320" height="100" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="780" y="295" text-anchor="middle" font-weight="bold">3 · validateContactForm()</text>
+<text x="780" y="318" text-anchor="middle" font-size="14">is the email real? name long enough?</text>
+<text x="780" y="338" text-anchor="middle" font-size="14">(server double-checks — never trusts browser)</text>
+<text x="780" y="354" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">contactValidation.js — checks every field</text>
+
+<rect x="80" y="275" width="300" height="80" rx="10" fill="#FDECEA" stroke="#A6432C" stroke-width="2.5"/>
+<text x="230" y="307" text-anchor="middle" font-weight="bold">4a · INVALID</text>
+<text x="230" y="329" text-anchor="middle" font-size="14">red error text under the fields</text>
+<text x="230" y="347" text-anchor="middle" font-size="14">nothing was saved</text>
+
+<rect x="620" y="450" width="320" height="90" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="780" y="485" text-anchor="middle" font-weight="bold">4b · VALID</text>
+<text x="780" y="508" text-anchor="middle" font-size="14">saveSubmission() takes the message</text>
+<text x="780" y="528" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">submissionsStore.js — writes it to the file</text>
+
+<rect x="620" y="610" width="320" height="90" rx="10" fill="#E6F4EA" stroke="#2F855A" stroke-width="2.5"/>
+<text x="780" y="645" text-anchor="middle" font-weight="bold">5 · data/submissions.json</text>
+<text x="780" y="668" text-anchor="middle" font-size="14">new entry APPENDED at the end of the file</text>
+<text x="780" y="687" text-anchor="middle" font-size="14">(old messages never overwritten)</text>
+
+<rect x="620" y="780" width="320" height="80" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="780" y="812" text-anchor="middle" font-weight="bold">6 · respond: redirect</text>
+<text x="780" y="834" text-anchor="middle" font-size="14">“browser — go load ?sent=1”</text>
+<text x="780" y="851" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">actions.js — tells the browser: go to ?sent=1</text>
+
+<rect x="80" y="780" width="300" height="120" rx="10" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="2.5"/>
+<text x="230" y="815" text-anchor="middle" font-weight="bold">7 · Success screen</text>
+<text x="230" y="838" text-anchor="middle" font-size="14">green banner + fresh empty form</text>
+<text x="230" y="858" text-anchor="middle" font-size="13">refreshing just re-views this page —</text>
+<text x="230" y="876" text-anchor="middle" font-size="13">it can never send the message twice</text>
+<text x="230" y="893" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">page.js shows the banner, ContactForm.js resets</text>
+
+<rect x="620" y="1010" width="320" height="90" rx="10" fill="#F3E8FF" stroke="#6B46C1" stroke-width="2.5"/>
+<text x="780" y="1045" text-anchor="middle" font-weight="bold">8 · YOU read the messages</text>
+<text x="780" y="1068" text-anchor="middle" font-size="14">open the file yourself — like checking a mailbox</text>
+<text x="780" y="1087" text-anchor="middle" font-size="13">no page on the site ever reads this file</text>
+</g>
+
+<!-- arrows -->
+<g stroke="#222" stroke-width="3" fill="none">
+<path d="M 380 135 H 612" marker-end="url(#ah)"/>
+<path d="M 780 180 V 252" marker-end="url(#ah)"/>
+<path d="M 620 315 H 390" stroke="#A6432C" marker-end="url(#ahr)"/>
+<path d="M 780 360 V 442" marker-end="url(#ah)"/>
+<path d="M 780 540 V 602" marker-end="url(#ah)"/>
+<path d="M 780 700 V 772" marker-end="url(#ah)"/>
+<path d="M 620 820 H 390" marker-end="url(#ah)"/>
+<path d="M 230 780 V 735 Q 230 725 240 725 H 960 Q 970 725 970 735 V 1015 Q 970 1025 960 1025 H 948" stroke="#6B46C1" stroke-dasharray="7 6" marker-end="url(#ah)"/>
+<path d="M 230 275 V 188" stroke="#A6432C" stroke-dasharray="7 6" marker-end="url(#ahr)"/>
+</g>
+
+<g font-size="14.5" font-weight="bold" fill="#222">
+<rect x="425" y="106" width="150" height="20" fill="#fff"/>
+<text x="500" y="121" text-anchor="middle">click "Send" →</text>
+<rect x="788" y="205" width="70" height="20" fill="#fff"/>
+<text x="823" y="220">check →</text>
+<rect x="440" y="295" width="140" height="20" fill="#fff"/>
+<text x="510" y="310" text-anchor="middle" fill="#A6432C">← errors returned</text>
+<rect x="788" y="390" width="80" height="20" fill="#fff"/>
+<text x="823" y="405">valid ↓</text>
+<rect x="788" y="560" width="90" height="20" fill="#fff"/>
+<text x="828" y="575">append ↓</text>
+<rect x="788" y="725" width="120" height="20" fill="#fff"/>
+<text x="843" y="740">saved — reply ↓</text>
+<rect x="420" y="800" width="160" height="20" fill="#fff"/>
+<text x="505" y="815" text-anchor="middle">← browser loads it</text>
+<text x="985" y="880" font-size="13.5" fill="#6B46C1" transform="rotate(90 985 880)" text-anchor="middle">the file sits here until…</text>
+<rect x="150" y="215" width="130" height="20" fill="#fff"/>
+<text x="215" y="230" text-anchor="middle" fill="#A6432C">fix &amp; retry ↑</text>
+</g>
+</svg>

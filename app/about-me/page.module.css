@@ -1,0 +1,19 @@
+.story {
+  max-width: 74ch;
+}
+
+.story p {
+  margin-bottom: 1.4rem;
+  font-size: 1.02rem;
+}
+
+.story p:last-child {
+  margin-bottom: 0;
+}
+
+.signoff {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-walnut);
+}

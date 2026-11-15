@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" font-family="Calibri, Arial, sans-serif" style="display:block;margin:0 auto;background:#fff">
+<title>Contact forms — server form vs API form</title>
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 z" fill="#222"/></marker>
+</defs>
+<text x="500" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#222">Two contact forms, two paths — one validation, one destination</text>
+
+<text x="240" y="65" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B6CB0">CONTACT ME — server form</text>
+<text x="240" y="83" text-anchor="middle" font-size="13" font-style="italic" fill="#666">/contact-me-server-form</text>
+
+<text x="760" y="65" text-anchor="middle" font-size="15" font-weight="bold" fill="#596239">GET IN TOUCH — API form</text>
+<text x="760" y="83" text-anchor="middle" font-size="13" font-style="italic" fill="#666">/contact-me</text>
+
+<g font-size="16">
+<!-- left column: server form -->
+<rect x="70" y="100" width="340" height="80" rx="10" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="2.5"/>
+<text x="240" y="130" text-anchor="middle" font-weight="bold">1 · Contact form</text>
+<text x="240" y="152" text-anchor="middle" font-size="13" font-style="italic" fill="#666">ContactForm.js — collects name, email, message</text>
+<line x1="240" y1="180" x2="240" y2="208" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="70" y="210" width="340" height="80" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="240" y="240" text-anchor="middle" font-weight="bold">2 · saveContactForm()</text>
+<text x="240" y="260" text-anchor="middle" font-size="13.5">Server Action — posts straight to server code</text>
+<text x="240" y="278" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">actions.js</text>
+<line x1="240" y1="290" x2="240" y2="318" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="70" y="320" width="340" height="80" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="240" y="350" text-anchor="middle" font-weight="bold">3 · validateContactForm()</text>
+<text x="240" y="370" text-anchor="middle" font-size="13.5">same rules: real email, long enough name</text>
+<text x="240" y="388" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">contactValidation.js — the server never trusts the browser</text>
+<line x1="240" y1="400" x2="240" y2="428" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="70" y="430" width="340" height="90" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="240" y="458" text-anchor="middle" font-weight="bold">4 · save + redirect</text>
+<text x="240" y="478" text-anchor="middle" font-size="13.5">appends the message, then redirects to ?sent=1</text>
+<text x="240" y="496" text-anchor="middle" font-size="13.5">green banner — refreshing can never send twice</text>
+<text x="240" y="512" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">Post / Redirect / Get pattern</text>
+
+<line x1="240" y1="520" x2="420" y2="575" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<!-- right column: API form -->
+<rect x="590" y="100" width="340" height="80" rx="10" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="2.5"/>
+<text x="760" y="130" text-anchor="middle" font-weight="bold">1 · Get in Touch form</text>
+<text x="760" y="152" text-anchor="middle" font-size="13" font-style="italic" fill="#666">ContactFormApi.js — the same fields, fetch-based</text>
+<line x1="760" y1="180" x2="760" y2="208" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="590" y="210" width="340" height="80" rx="10" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="2.5"/>
+<text x="760" y="240" text-anchor="middle" font-weight="bold">2 · fetch() POST request</text>
+<text x="760" y="260" text-anchor="middle" font-size="13.5">JavaScript sends the data to an API address</text>
+<text x="760" y="278" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">runs in the browser</text>
+<line x1="760" y1="290" x2="760" y2="318" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="590" y="320" width="340" height="80" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="760" y="350" text-anchor="middle" font-weight="bold">3 · /api/contacts — API route</text>
+<text x="760" y="370" text-anchor="middle" font-size="13.5">receives the POST and validates it</text>
+<text x="760" y="388" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">app/api/contacts/route.js + contactValidation.js</text>
+<line x1="760" y1="400" x2="760" y2="428" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<rect x="590" y="430" width="340" height="90" rx="10" fill="#FFF4E6" stroke="#C05621" stroke-width="2.5"/>
+<text x="760" y="458" text-anchor="middle" font-weight="bold">4 · save + respond</text>
+<text x="760" y="478" text-anchor="middle" font-size="13.5">appends the message, then answers 201 Created</text>
+<text x="760" y="496" text-anchor="middle" font-size="13.5">green banner — no page reload needed</text>
+<text x="760" y="512" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">a classic request/response API</text>
+
+<line x1="760" y1="520" x2="580" y2="575" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+
+<!-- shared destination -->
+<rect x="270" y="578" width="460" height="85" rx="10" fill="#E8F0E4" stroke="#596239" stroke-width="2.5"/>
+<text x="500" y="606" text-anchor="middle" font-weight="bold">data/submissions.json</text>
+<text x="500" y="627" text-anchor="middle" font-size="13.5">BOTH forms append here — existing entries are never overwritten</text>
+<text x="500" y="646" text-anchor="middle" font-size="12.5" font-style="italic" fill="#666">the source field records which form sent it: server-form | api-form</text>
+</g>
+</svg>
