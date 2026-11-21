@@ -43,23 +43,5 @@
     "category": "YouTube",
     "url": "",
     "description": "hey sevgi check this out!"
-  },
-  {
-    "id": "85d09e1c-aee2-48d6-8b4e-0e3a122504ba",
-    "createdAt": "2026-11-21T01:07:14.491Z",
-    "name": "qweqwe",
-    "title": "qweqwe",
-    "category": "Coursera",
-    "url": "https://qwe.com",
-    "description": "qwe"
-  },
-  {
-    "id": "8337b127-64f7-4ca5-bd9e-c819f0732c9c",
-    "createdAt": "2026-11-21T01:08:03.382Z",
-    "name": "zz",
-    "title": "zzz",
-    "category": "Udemy",
-    "url": "https://qweqweq.com",
-    "description": "zzz"
   }
 ]

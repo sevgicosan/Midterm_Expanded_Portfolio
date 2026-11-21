@@ -28,6 +28,7 @@ export default function StickyNote({
   onClick,
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuWrapRef = useRef(null);
   // Inline editing of the personal copy's text (My List only):
   // the draft lives here; saving reports up to the parent,
   // which writes it to LocalStorage — never to the API.
@@ -49,13 +50,23 @@ export default function StickyNote({
     el.setSelectionRange(el.value.length, el.value.length);
   }, [draft, editingText]);
 
-  // Close the menu when clicking anywhere else on the page.
+  // Close the menu when the pointer goes down anywhere else on
+  // the page. Presses on the menu itself (or the kebab) are
+  // ignored — closing there would unmount the buttons before
+  // their click handlers ever run.
   useEffect(() => {
     if (!menuOpen) {
       return;
     }
 
-    function close() {
+    function close(event) {
+      if (
+        menuWrapRef.current &&
+        event.target instanceof Node &&
+        menuWrapRef.current.contains(event.target)
+      ) {
+        return;
+      }
       setMenuOpen(false);
     }
 
@@ -156,7 +167,7 @@ export default function StickyNote({
         </svg>
       </button>
         {isMine && (
-        <span className={styles.noteMenuWrap}>
+        <span ref={menuWrapRef} className={styles.noteMenuWrap}>
           <button
             type="button"
             className={styles.kebabButton}
@@ -177,6 +188,7 @@ export default function StickyNote({
               <button
                 type="button"
                 role="menuitem"
+                title="Edit"
                 onClick={() => {
                   setMenuOpen(false);
                   onEdit();
@@ -187,6 +199,7 @@ export default function StickyNote({
               <button
                 type="button"
                 role="menuitem"
+                title="Delete"
                 className={styles.menuDelete}
                 onClick={() => {
                   setMenuOpen(false);
