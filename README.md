@@ -17,8 +17,8 @@ Like the previous parts, the website was developed using the Viber Coding Agent 
 Step 1 — Clone the repository and open the project folder:
 
 ```bash
-git clone https://github.com/sevgicosan/Portfolio-Website-Part-2.git
-cd Portfolio-Website-Part-2
+git clone https://github.com/sevgicosan/Midterm_Expanded_Portfolio.git
+cd Midterm_Expanded_Portfolio
 ```
 
 Step 2 — Install the dependencies (Node.js 18.18+ required):
