@@ -1,0 +1,65 @@
+[
+  {
+    "id": "8fb8c0f2-a2ef-42d9-987e-3c8bff96dc9d",
+    "createdAt": "2026-11-20T08:48:23.154Z",
+    "name": "Sevgi",
+    "title": "New Recommendation",
+    "category": "Other",
+    "url": "https://youtu.be/hXM-ARO6rHA?si=aBdrtb5kRM6jhCk9",
+    "description": "it's nice to listen"
+  },
+  {
+    "id": "83714387-2059-4947-9416-cf8eb13f6b4b",
+    "createdAt": "2026-11-20T08:53:50.901Z",
+    "name": "Sevgi",
+    "title": "Data Bootcamp",
+    "category": "Udemy",
+    "url": "",
+    "description": "Hi Sevgi! check this out"
+  },
+  {
+    "id": "ac412a59-49ff-4a27-bf1c-8af236f53b06",
+    "createdAt": "2026-11-20T08:54:47.464Z",
+    "name": "Test Suggestion",
+    "title": "hey",
+    "category": "Other",
+    "url": "",
+    "description": "hey hey how is this learning?"
+  },
+  {
+    "id": "5c4c560c-dbf4-40e5-9d60-db2c48e0245c",
+    "createdAt": "2026-11-20T20:15:15.701Z",
+    "name": "Sevgi",
+    "title": "Machine Learning",
+    "category": "YouTube",
+    "url": "https://youtu.be/vStJoetOxJg?si=S9SuZn4EtVOwKisx",
+    "description": "This is a great course!"
+  },
+  {
+    "id": "77e68a5b-c068-47b8-a5be-4eb58f011d3d",
+    "createdAt": "2026-11-20T21:10:35.598Z",
+    "name": "Baskin",
+    "title": "How to Crochet",
+    "category": "YouTube",
+    "url": "",
+    "description": "hey sevgi check this out!"
+  },
+  {
+    "id": "85d09e1c-aee2-48d6-8b4e-0e3a122504ba",
+    "createdAt": "2026-11-21T01:07:14.491Z",
+    "name": "qweqwe",
+    "title": "qweqwe",
+    "category": "Coursera",
+    "url": "https://qwe.com",
+    "description": "qwe"
+  },
+  {
+    "id": "8337b127-64f7-4ca5-bd9e-c819f0732c9c",
+    "createdAt": "2026-11-21T01:08:03.382Z",
+    "name": "zz",
+    "title": "zzz",
+    "category": "Udemy",
+    "url": "https://qweqweq.com",
+    "description": "zzz"
+  }
+]

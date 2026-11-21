@@ -10,6 +10,7 @@ import {
   BriefcaseIcon,
   CodeIcon,
   PaperPlaneIcon,
+  PinIcon,
   TableauIcon,
 } from "@/components/icons";
 import styles from "./page.module.css";
@@ -148,6 +149,15 @@ export default function Home() {
             title="Selected projects."
             description="Hands-on projects that highlight my technical skills, problem-solving approach, and analytical thinking."
             href="/projects"
+          />
+
+          <SectionNavRow
+            id="learning-exchange"
+            icon={<PinIcon size={26} />}
+            label="Learning Exchange"
+            title="Learning Exchange."
+            description="Recommend a course, book, podcast, or talk worth sharing? Add it to the board, explore others’ recommendations, and bookmark your favorites for later."
+            href="/learning-exchange"
           />
 
           <section id="contact" className={styles.contactBand} aria-label="Contact">

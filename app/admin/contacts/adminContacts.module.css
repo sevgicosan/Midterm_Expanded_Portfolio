@@ -1,0 +1,370 @@
+/* ============================================================
+   Contact Requests admin — matches the approved mockup:
+   ivory background, surface panel, stone dividers, olive
+   accents, minimal icon buttons, responsive stacked rows.
+   ============================================================ */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-forest);
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--color-walnut);
+  font-style: italic;
+}
+
+.badge {
+  font-family: var(--font-sans);
+  background: var(--color-olive);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-top: 0.3rem;
+}
+
+.error {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-danger);
+  background: #fdecea;
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- table ---------- */
+
+.tableCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-stone);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+}
+
+.table th {
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+  background: var(--color-surface-muted);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-stone);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  border-bottom: 1px solid rgba(212, 200, 183, 0.55);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background: rgba(234, 227, 213, 0.4);
+}
+
+.name {
+  font-weight: 700;
+  color: var(--color-forest);
+  white-space: nowrap;
+}
+
+.email {
+  color: var(--color-walnut);
+}
+
+.preview {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date {
+  color: var(--color-walnut);
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.emptyState {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-walnut);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* ---------- status chips ---------- */
+
+.status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  white-space: nowrap;
+}
+
+.statusNew {
+  background: rgba(89, 98, 57, 0.14);
+  color: var(--color-olive);
+}
+
+.statusReviewed {
+  background: rgba(135, 147, 138, 0.2);
+  color: #5c6a63;
+}
+
+.statusResponded {
+  background: rgba(48, 61, 50, 0.12);
+  color: var(--color-forest);
+}
+
+/* ---------- action icons ---------- */
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.iconButton {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--color-surface-muted);
+  color: var(--color-walnut);
+  transition: background 0.15s ease;
+}
+
+.iconButton:hover {
+  background: var(--color-stone);
+}
+
+.iconButtonDanger {
+  color: var(--color-danger);
+}
+
+.iconButtonDanger:hover {
+  background: rgba(168, 50, 50, 0.12);
+}
+
+/* ---------- modals ---------- */
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modalTitle {
+  font-size: 1.15rem;
+  color: var(--color-forest);
+}
+
+.modalMeta {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-walnut);
+}
+
+.messageBody {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-stone);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  white-space: pre-wrap;
+}
+
+.messageReadOnly {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.deleteWarning {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}
+
+.fieldLabel {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+  margin-top: 0.25rem;
+}
+
+.fieldSelect,
+.fieldTextarea {
+  width: 100%;
+  font: inherit;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-stone);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.fieldTextarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
+.fieldHint {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--color-sage);
+  font-style: italic;
+  margin-top: -0.4rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  font-family: var(--font-sans);
+}
+
+.primaryButton,
+.ghostButton,
+.dangerButton {
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.primaryButton {
+  background: var(--color-olive);
+  color: #fff;
+  border: 1px solid var(--color-olive);
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.ghostButton {
+  background: transparent;
+  color: var(--color-walnut);
+  border: 1px solid var(--color-stone);
+}
+
+.ghostButton:hover {
+  border-color: var(--color-walnut);
+}
+
+.dangerButton {
+  background: var(--color-danger);
+  color: #fff;
+  border: 1px solid var(--color-danger);
+}
+
+.dangerButton:hover:not(:disabled) {
+  background: #a83232;
+}
+
+.primaryButton:disabled,
+.dangerButton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* ---------- small screens: stack rows into labeled lines ---------- */
+
+@media (max-width: 760px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    border-bottom: 1px solid var(--color-stone);
+    padding: 0.6rem 0;
+  }
+
+  .table tr:last-child {
+    border-bottom: none;
+  }
+
+  .table td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-olive);
+    flex-shrink: 0;
+  }
+
+  .preview {
+    white-space: normal;
+    max-width: 62%;
+    text-align: right;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+}

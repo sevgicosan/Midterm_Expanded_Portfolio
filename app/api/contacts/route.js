@@ -14,7 +14,28 @@
 
 import { NextResponse } from "next/server";
 import { validateContactForm } from "@/lib/contactValidation";
-import { saveSubmission } from "@/lib/submissionsStore";
+import { getSubmissions, saveSubmission } from "@/lib/submissionsStore";
+
+// ============================================================
+// GET /api/contacts — returns every contact submission for the
+// admin inbox (personal portfolio demo, no auth by design).
+// ============================================================
+
+export async function GET() {
+  try {
+    const submissions = await getSubmissions();
+    return NextResponse.json(
+      { success: true, submissions },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Failed to load contact submissions:", error);
+    return NextResponse.json(
+      { success: false, message: "Could not load contact requests." },
+      { status: 500 }
+    );
+  }
+}
 
 export async function POST(request) {
   // 1. Parse the JSON body (reject anything that isn't valid JSON).

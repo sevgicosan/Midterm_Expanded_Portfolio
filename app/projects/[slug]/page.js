@@ -1,19 +1,43 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projects, getProjectBySlug } from "@/lib/projects";
+import { cacheLife } from "next/cache";
+import { getProjectBySlug, getProjects } from "@/lib/projectsStore";
 import styles from "./page.module.css";
 
-// Pre-render one page per project at build time.
-// The "slug" values here become the URLs: /projects/product-inventory
-// and /projects/competitive-ai.
-export function generateStaticParams() {
+// Pre-render one page per project that exists at build time
+// (same pattern as the blog detail pages). Projects added later,
+// while the site is running, are rendered on demand the first
+// time someone opens their URL.
+//
+// Cache Components requires at least one result here, so when
+// no projects exist yet we return a placeholder slug — its page
+// simply calls notFound() and renders the 404 page.
+export async function generateStaticParams() {
+  const projects = await getProjects();
+
+  if (projects.length === 0) {
+    return [{ slug: "no-projects-yet" }];
+  }
+
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+// Reading the JSON file is "runtime data", which Cache
+// Components only allows through the cache. Projects can be
+// EDITED from the admin page, so a cached page must not live
+// forever: cacheLife("minutes") keeps each cached copy for
+// about a minute, so an edit becomes visible on the public
+// page shortly after saving.
+async function getCachedProjectBySlug(slug) {
+  "use cache";
+  cacheLife("minutes");
+  return getProjectBySlug(slug);
 }
 
 // Give each project page its own browser tab title.
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getCachedProjectBySlug(slug);
 
   if (!project) {
     return { title: "Project Not Found" };
@@ -29,7 +53,7 @@ export async function generateMetadata({ params }) {
 // the URL and decides which project's content is displayed.
 export default async function ProjectDetailPage({ params }) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getCachedProjectBySlug(slug);
 
   // Unknown slug (e.g. /projects/does-not-exist) → show the 404 page.
   if (!project) {

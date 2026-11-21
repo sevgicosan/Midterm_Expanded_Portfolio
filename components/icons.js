@@ -133,6 +133,15 @@ export function CodeIcon(props) {
   );
 }
 
+export function PinIcon(props) {
+  return (
+    <Svg {...props} {...strokeProps}>
+      <path d="M12 17v5" />
+      <path d="M5 10V5h14v5l-2 2v4H7v-4z" />
+    </Svg>
+  );
+}
+
 export function PaperPlaneIcon(props) {
   return (
     <Svg {...props} {...strokeProps}>
